@@ -1,8 +1,7 @@
 # prom-glows
+# Prometheus federation
 
-Prometheus federation
-
-This assumes the following
+This assumes the following ips
 
 3 prometheus running
  - 2 being on a slave setting
@@ -28,14 +27,14 @@ The connections are as follows
 
 ```
 global:
-  scrape_interval:     15s
+  scrape_interval:     15s #Thoose are sample times, adjust for your kubernetes environtment
   evaluation_interval: 15s
 alerting:
   alertmanagers:
   - static_configs:
     - targets:
 rule_files:
-scrape_configs:
+scrape_configs: # For a kubernetes environtment, it will follow the standard autodiscovery rules and settings
   - job_name: 'prometheus-avalanche'
     static_configs:
     - targets: ['172.17.0.6:9001']
