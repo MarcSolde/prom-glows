@@ -71,7 +71,7 @@ scrape_configs:
       'match[]':
         - '{job="prometheus"}' #MUST have a non-empty vector query
 
-    static_configs: #F
+    static_configs: 
       - targets: ['172.17.0.6:9090'] # For kubernetes namespaces, the target is going to be service-name.namespace
         labels:
           instance: 'prom1'
