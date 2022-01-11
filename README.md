@@ -21,6 +21,9 @@ This assumes the following
 1 telegraf
  - 172.17.0.3
 
+The connections are as follows
+![](./fed.png)
+
 ## Slave prometheus config
 
 ```
